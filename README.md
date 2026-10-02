@@ -22,6 +22,7 @@ Proyecto integrador desarrollado para el **Trabajo Práctico Final (Opción A)**
 
 La estructura del código respeta las convenciones y buenas prácticas de React:
 
+```text
 src/
 ├── assets/         # Imágenes, videos y recursos estáticos
 ├── components/     # Componentes visuales reutilizables (Navbar, Footer, AlbumCard, Foto3D)
@@ -31,40 +32,36 @@ src/
 ├── utils/          # Configuraciones globales (ej. URLs de la API)
 ├── App.jsx         # Configuración del enrutador central y anidación de rutas
 └── main.jsx        # Punto de entrada de la aplicación
-
+```
 
 ## ⚙️ Instalación y Ejecución Local
 
 Para correr este proyecto en tu computadora, necesitarás tener instalado [Node.js](https://nodejs.org/).
 
 ### 1. Clonar el repositorio e instalar dependencias
-
 Abre tu terminal y ejecuta:
 
-git clone (https://github.com/nahhhhuel/la-sociedad-de-taylor-react)
+```bash
+git clone https://github.com/nahhhhuel/la-sociedad-de-taylor-react
 cd la-sociedad-de-taylor-react
 npm install
-
-
+```
 
 ### 2. Iniciar la API Local
-
 Como el proyecto consume una API propia basada en un archivo `db.json`, es necesario levantar ese servicio primero para que las secciones de Música y Galería reciban los datos. Abre una terminal y ejecuta:
 
-# Ejemplo usando json-server (ajusta este comando según el script que hayas configurado en tu package.json)
+```bash
 npx json-server --watch db.json --port 3000
-
+```
 
 ### 3. Iniciar el servidor de desarrollo (Vite)
-
 Abre una **nueva** pestaña en tu terminal (sin cerrar la de la API) y ejecuta:
 
+```bash
 npm run dev
-
+```
 
 La aplicación estará disponible en `http://localhost:5173/` (o el puerto que te indique la consola).
 
 ## ✍️ Autor
-
-Desarrollado por **Nahuel Matias Villavicencio** para el Trabajo Práctico Final de UTN para FrontEnd.
-
+Desarrollado por **Nahuel Matias Villavicencio** para el Trabajo Práctico Final de frontend para la UTN.
