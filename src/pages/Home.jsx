@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import '../styles/Home.css';
 
-
 function Home() {
     return(
         <>
@@ -11,6 +10,7 @@ function Home() {
         <section className="redirect">
         <h1>CONOCE A TAYLOR SWIFT</h1>
         <p>Recorre su discografia completa</p>
+        {/* Link para redireccionar mediante el router sin refrescar la página */}
         <Link to="/music" className="btn-redirect">Descubrir</Link>
         </section>
         </main>
@@ -18,4 +18,4 @@ function Home() {
     )
 }
 
-export default Home;    
+export default Home;

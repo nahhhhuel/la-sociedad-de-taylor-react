@@ -2,20 +2,20 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Navbar() {
-
+  // Estado para controlar la apertura y cierre del menu hamburguesa responsive
   const [menuAbierto, setMenuAbierto] = useState(false)
 
-
   return (
-
     <header className="main-header">
-    
+      
+      {/* Overlay oscuro que cierra el menú al hacerle click en el */}
       <div 
       className={`overlay ${menuAbierto ? "active" : ""}`}
       onClick={() => setMenuAbierto(false)}
       >
-
       </div>
+      
+      {/* Boton "hamburguesa" para el responsive para alternar el abrir o cerrar el menu */}
       <button
         className="btn-section"
         onClick={() => setMenuAbierto(!menuAbierto)}
@@ -34,6 +34,7 @@ function Navbar() {
         />
       </Link>
 
+      {/* Navegación principal, cambia la  clase "active" según el estado de menuAbierto */}
       <nav 
       className={`main-nav ${menuAbierto ? "active" : ""}`}
       >
@@ -53,6 +54,7 @@ function Navbar() {
           </button>
         </div>
 
+        {/* Enlaces de enrutamiento que ademas cierran el menu responsive al hacer click */}
         <ul>
           <li>
             <Link to="/" onClick={() => setMenuAbierto(false)}>Inicio</Link>

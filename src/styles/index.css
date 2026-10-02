@@ -4,13 +4,13 @@
     padding: 0;
 }
 
-
-
+/* variables */
 :root {
     --color-primario: #5eb298;
     --color-secundario: #b24342;
     --color-oscuro: #5f4256;
 }
+
 
 body {
     background-color: black;
@@ -21,15 +21,20 @@ body {
     color: white;
 }
 
+/* asegura que el footer siempre se empuje al fondo  */
 #root {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
+/* ocupa el espacio disponible entre Navbar y Footer */
 main {
     flex: 1;
 }
+
+
+/* Botón hamburguesa para responsive */
 
 .btn-section {
     background: none;
@@ -42,6 +47,7 @@ main {
     width: fit-content;
 }
 
+/* lineas para el icono hamburguesa */
 .bar {
     width: 25px;
     height: 3px;
@@ -50,6 +56,7 @@ main {
     display: block;
 }
 
+/* Navbar */
 .main-header{
     width: 100%;
     display: flex;
@@ -62,7 +69,7 @@ main {
     z-index: 100;
 }
 
-
+/* Menu responsive */
 .main-nav {
     position: fixed;
     top: 0;
@@ -92,22 +99,22 @@ main {
     color: white;
 }
 
-
 .main-nav a:hover{
     color: var(--color-primario);
     transition: color 0.3s ease;
     transform: translateY(-2px);
 }
 
+/* Estado para react */
 .main-nav.active{
     transform: translateX(0);
 }
 
+/* fondo traslucido para cuando se abre el menu responsive */
 .overlay.active{
     opacity: 1;
     pointer-events: all;
 }
-
 
 .overlay {
     position: fixed;
@@ -123,8 +130,7 @@ main {
     transition: opacity 0.3s ease;
 }
 
-
-
+/* encabeza para menu responsive (logo y boton cerrar) */
 .nav-top {
     display: flex;
     justify-content: space-between;
@@ -144,8 +150,7 @@ main {
     cursor: pointer;
 }
 
-
-/* MEDIA QUERY */
+/* mediaquery para PC */
 
 @media (min-width: 768px) {
 
@@ -165,10 +170,12 @@ main {
     flex-shrink: 0;
 }
 
+/* oculta menu responsive */
 .btn-section, .overlay, .nav-top {
     display: none;
 }
 
+/* restablece menu tradicional para version desktop */
 .main-nav{
     position: static;
     transform: none;
@@ -197,16 +204,11 @@ main {
 }
 }
 
-
-
 ul, ol{
     list-style: none;
 }
 
-
-
-
-/* FOOTER */ 
+/* footer*/
 
 .main-footer {
     display: flex;
@@ -226,77 +228,3 @@ ul, ol{
 .main-footer a:hover {
 color: var(--color-primario);
 }
-
-.redirect {
- text-align: center;
- padding: 1rem 2rem;
- display: flex;
- flex-direction: column;
- align-items: center;
- gap: 10px; 
-}
-
-.redirect p {
-    font-size: large;
-}
-
-
-
-/* BUTTON MAIN*/
-
-.btn-redirect {
-    text-decoration: none;
-    padding: 0.7rem 1.5rem;
-    border: none;
-    border-radius: 30px;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 1rem;
-    color: white;
-    background-color: var(--color-secundario);
-    width: fit-content;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-redirect:hover {
-    background-color: var(--color-primario);
-    transform: scale(1.1);
-}
-
-/* PAGINA ERROR 404*/
-
-.pagina-error {
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
-.pagina-error h2 {
-  font-size: 2.2rem;
-  margin: 0;
-}
-
-.pagina-error a {
-  display: inline-block;
-  padding: 0.6rem 1.4rem;
-  border-radius: 8px;
-  border: 1px solid currentColor;
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-  transition: opacity 0.2s ease;
-}
-
-.pagina-error a:hover {
-  opacity: 0.7;
-}
-
-
-//*
-background: #F9513E;
-background: radial-gradient(circle,rgba(249, 81, 62, 1) 0%, rgba(10, 153, 118, 1) 100%);*//

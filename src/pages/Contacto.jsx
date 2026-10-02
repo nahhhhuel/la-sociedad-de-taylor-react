@@ -3,11 +3,13 @@ import '../styles/Contacto.css'
 
 function Contacto() {
     
+    // Manejo de estados individuales para crear un formulario controlado
     const [nombre, setNombre] = useState("");
     const [email, setEmail] = useState("");
     const [asunto, setAsunto] = useState("");
     const [mensaje, setMensaje] = useState("");
 
+    //  Para limpiar todos los campos del formulario manualmente
     const handleReset = () => {
     setNombre("");
     setEmail("");
@@ -15,23 +17,24 @@ function Contacto() {
     setMensaje("");
     };
 
+    // Funcion que se ejecuta al hacer el submit
     const handleSubmit = async (evento) => {
+        // Evita que la pagina se recargue 
         evento.preventDefault()
 
+        // console log para submit
         console.log("=== DATOS DEL FORMULARIO ENVIADOS ===");
         console.log("Nombre:", nombre);
         console.log("Email:", email);
         console.log("Asunto:", asunto);
         console.log("Mensaje:", mensaje);
 
-
+        // Resetea los campos despues del submit
         setNombre("");
         setEmail("");
         setAsunto("");
         setMensaje("");
-        
     }
-
 
     return(
         <main>
@@ -42,12 +45,14 @@ function Contacto() {
                 <p>Le dejamos el siguiente formulario donde puede rellenar la información con cualquier inquietud, sugerencia o  problema que haya tenido con la página.</p>
             </div>
 
+            {/* vinculacion al handleSubmit para control de datos al enviar */}
             <form onSubmit={handleSubmit} className="form-contacto">
 
             <div className="campo">
             <label htmlFor="nombre">Nombre</label>
             <input type="text" id="nombre" value={nombre} 
                 onChange={(evento) => {
+                // actualiza estado y loguea en la consola mientras se modifica el input
                 setNombre(evento.target.value);
                 console.log("Escribiendo nombre:", evento.target.value);
                 }} 
@@ -80,7 +85,6 @@ function Contacto() {
                 console.log("Mensaje:", evento.target.value);
             }} placeholder="Tu mensaje..." required></textarea>
 
-            
             </div>
             <div className="botones">
             <button type="submit" className="submit">Enviar mensaje</button>

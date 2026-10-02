@@ -1,16 +1,70 @@
-# React + Vite
+# La Sociedad de Taylor - React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto integrador desarrollado para el **Trabajo Práctico Final (Opción A)** del Curso Inicial de Front-End (React.js) de la UTN. El objetivo de este proyecto es la migración de un sitio web estático (previamente maquetado en HTML/CSS) a una SPA (Single Page Application) moderna, interactiva y modularizada utilizando React.
 
-Currently, two official plugins are available:
+## 🚀 Características Principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Arquitectura Basada en Componentes:** Estructura limpia y escalable dividida en componentes de interfaz reutilizables (Navbar, Footer, Cards) y vistas de página (Home, Music, Gallery, Contacto).
+* **Enrutamiento Dinámico (Client-Side Routing):** Navegación fluida sin recarga de página implementada con `react-router-dom` (v6+), incluyendo un `Layout` global y captura de rutas inexistentes (Error 404).
+* **Consumo de API Propia (Local):** Los datos de la aplicación (álbumes y fotos) se consumen dinámicamente desde una base de datos local (`db.json`) mediante peticiones asíncronas, simulando un entorno de backend real.
+* **Custom Hooks:** Lógica de peticiones HTTP abstraída en hooks personalizados (`useFetchGallery`, `useFetchAlbums`) que gestionan el ciclo de vida de los datos, el estado de carga (`loading`) y la captura de errores.
+* **Formulario 100% Controlado:** Sección de contacto conectada al estado de React (`useState`), con logs en tiempo real, prevención de recarga nativa (`preventDefault`) y funciones de reseteo (manual y post-envío).
+* **Interactividad y Efectos Visuales:** Galería de imágenes con un carrusel interactivo en 3D que calcula dinámicamente las clases CSS en base al estado de la posición actual.
 
-## React Compiler
+## 🛠️ Tecnologías Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Core:** React, Vite
+* **Navegación:** React Router DOM
+* **Estilos:** CSS puro 
+* **Backend Simulado:** JSON Server (o entorno local para servir `db.json`)
 
-## Expanding the ESLint configuration
+## 📁 Estructura del Proyecto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+La estructura del código respeta las convenciones y buenas prácticas de React:
+
+src/
+├── assets/         # Imágenes, videos y recursos estáticos
+├── components/     # Componentes visuales reutilizables (Navbar, Footer, AlbumCard, Foto3D)
+├── hooks/          # Custom Hooks (useFetchAlbums, useFetchGallery)
+├── pages/          # Vistas principales vinculadas a las rutas
+├── styles/         # Hojas de estilo independientes para cada vista/componente
+├── utils/          # Configuraciones globales (ej. URLs de la API)
+├── App.jsx         # Configuración del enrutador central y anidación de rutas
+└── main.jsx        # Punto de entrada de la aplicación
+
+
+## ⚙️ Instalación y Ejecución Local
+
+Para correr este proyecto en tu computadora, necesitarás tener instalado [Node.js](https://nodejs.org/).
+
+### 1. Clonar el repositorio e instalar dependencias
+
+Abre tu terminal y ejecuta:
+
+git clone (https://github.com/nahhhhuel/la-sociedad-de-taylor-react)
+cd la-sociedad-de-taylor-react
+npm install
+
+
+
+### 2. Iniciar la API Local
+
+Como el proyecto consume una API propia basada en un archivo `db.json`, es necesario levantar ese servicio primero para que las secciones de Música y Galería reciban los datos. Abre una terminal y ejecuta:
+
+# Ejemplo usando json-server (ajusta este comando según el script que hayas configurado en tu package.json)
+npx json-server --watch db.json --port 3000
+
+
+### 3. Iniciar el servidor de desarrollo (Vite)
+
+Abre una **nueva** pestaña en tu terminal (sin cerrar la de la API) y ejecuta:
+
+npm run dev
+
+
+La aplicación estará disponible en `http://localhost:5173/` (o el puerto que te indique la consola).
+
+## ✍️ Autor
+
+Desarrollado por **Nahuel Matias Villavicencio** para el Trabajo Práctico Final de UTN para FrontEnd.
+

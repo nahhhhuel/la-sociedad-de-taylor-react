@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 function Foto3D({fotos}){
-
+    // useState para saber que foto está activa actualmente en el centro
     const [posicion, setPosicion] = useState(0);
 
-
+    // Funcion para retroceder en el carrusel de forma circular
     const anterior = () => {
         if (posicion === 0) {
             setPosicion(fotos.length - 1);
@@ -13,6 +13,7 @@ function Foto3D({fotos}){
         }
     };
 
+    // Funcion para avanzar en el carrusel de forma circular
     const siguiente = () => {
         if (posicion === fotos.length - 1) {
             setPosicion(0);
@@ -21,7 +22,6 @@ function Foto3D({fotos}){
         }
     };
 
-
     return(
         <div className="fotos-container">
             <button onClick={anterior}>
@@ -29,11 +29,14 @@ function Foto3D({fotos}){
             </button>
 
             <div className="escenario-fotos">
+            {/* Mapeo de fotos para renderizarlas con sus respectivas clases de posición 3D */}
             {fotos.map((foto, index) => { 
                 const {id, url, titulo } = foto;
 
+                // Calcula la distancia relativa de esta foto respecto a la posición actual
                 const distancia = index - posicion;
 
+                // Asignación dinamica de clase segun posicion
                 let clase = "oculta";
                 if (distancia === 0) clase = "activa";
                 else if (distancia === -1) clase = "izquierda";

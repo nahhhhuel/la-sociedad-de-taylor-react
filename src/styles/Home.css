@@ -1,8 +1,10 @@
+/* Logo visible dentro del menu ressponsive*/
 .logo-img-menu {
     max-width: 100%;
     height: auto;
 }
 
+/* logo en navbar */
 .logo-img {
     max-width: 150px;
     min-width: 0;
@@ -13,23 +15,63 @@
     align-items: center;
 }
 
+
+.redirect {
+ text-align: center;
+ padding: 1rem 2rem;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 10px; 
+}
+
+.redirect p {
+    font-size: large;
+}
+
+.btn-redirect {
+    text-decoration: none;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--color-secundario);
+    width: fit-content;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-redirect:hover {
+    background-color: var(--color-primario);
+    transform: scale(1.1);
+}
+
+
+/*media query*/
+
 @media (min-width: 768px) {
     .video-desktop{
     max-width: 100%;
     width: 100%;
     }
 
+    /* oculta el video para celulares en PC */
     .video-mobile{
     visibility: hidden;
     display: none;
     }
 }
 
+
 @media (max-width: 767px) {
+/* muestra el video para celulares */
 .video-mobile {
 max-width: 100%;
 }
 
+/* oculta el video de PC para celulares */
 .video-desktop {
     display: none;
 }

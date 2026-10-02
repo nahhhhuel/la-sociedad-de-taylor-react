@@ -1,3 +1,4 @@
+/* Alinea y centra las tarjetas en pantalla */
 .albums-container {
     display: flex;
     flex-wrap: wrap;
@@ -8,6 +9,8 @@
     max-width: 1300px;
     margin: 0 auto;
 }
+
+/* Estructura para la card*/
 
 .album-card {
     position: relative;
@@ -22,6 +25,7 @@
 }
 
 
+
 .album-media {
     position: relative;
     width: 220px;
@@ -33,6 +37,7 @@
     margin-top: 10px;
 }
 
+/* Cover del album */
 .album-media .cover{
     width: 100%;
     height: 100%;
@@ -43,6 +48,7 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Imagen del vinilo posicionada detras de la portada */
 .vinilo {
     position: absolute;
     top: 0;
@@ -52,15 +58,13 @@
     transition: transform 0.3s ease-in-out;
 }
 
+/* Efecto hover: desliza y rota el vinilo simulando sacarlo de la funda */
 .album-media:hover .vinilo{
     transform: translateY(-40%) rotate(45deg);
 }
 
 
-.album-toggle {
-    display: none;
-}
-
+/* Estado cerrado por defecto con animación fluida */
 .album-info, .album-details, .awards {
     max-height: 0;
     opacity: 0;
@@ -70,15 +74,16 @@
     text-align: center;
 }
 
+/* Estado abierto alternado mediante el hook useState en AlbumCard */
 .album-card.open .album-info,
 .album-card.open .album-details,
 .album-card.open .awards{
     max-height: 2000px;
     opacity: 1;
     margin-top: 1rem;
-    
 }
 
+/* Formato para el listado de premios */
 .list-awards{
     list-style: inside;
     display: flex;

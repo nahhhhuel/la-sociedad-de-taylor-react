@@ -12,11 +12,13 @@ select{
     border-radius: 5px;
 }
 
+/* Agrupacion vertical de los campos input */
 .campo{
     display: flex;
     flex-direction: column;
 }
 
+/* CONTENEDOR HEADER Y FORMULARIO */
 
 .contacto{
     display: flex;
@@ -25,6 +27,7 @@ select{
     max-width: 70vw;
     margin: 0 auto;
 }
+
 
 .header-contacto{
     text-align: center;
@@ -36,6 +39,7 @@ select{
     height: auto;
     border-radius: 8px;
 }
+
 
 .form-contacto{
     display: flex;
@@ -57,9 +61,13 @@ textarea{
     height: 40px;
 }
 
+/* Altura minima para el mensaje */
 .message{
     min-height: 160px;
 }
+
+
+/* CSS para botones*/
 
 .submit{
     margin: 0 auto;
@@ -72,17 +80,23 @@ textarea{
     transition: transform 0.3s ease;
 }
 
+/* Contenedor horizontal para alinear los botones de envío y borrado */
+
 .botones{
     display: flex;
     flex-direction: row;
 }
+
+/* Animacion visual al pasar el cursor */
 .submit:hover{
     transform: scale(1.1) translateY(-2px);
     background-color: var(--color-primario);
 }
 
+/* Aplico responsive para adaptar a la pantalla*/
 
 @media (max-width:760px){
+    /* Expande el formulario al ancho completo en responsive */
     .form-contacto{
     display: flex;
     flex-direction: column;
@@ -93,6 +107,5 @@ textarea{
     background-color: var(--color-secundario);
     border-radius: 8px;
 }
-
 
 }

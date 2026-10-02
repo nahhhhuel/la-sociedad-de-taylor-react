@@ -1,15 +1,16 @@
 import { useState } from "react"
 
 function AlbumCard({ album }){
-
+    // useState para controlar si la tarjeta muestra los detalles o no
     const [abierto, setAbierto]  = useState(false);
+    // Desestructuración de las propiedades del álbum recibidas por props para un codigo mas limpio
     const { titulo, info, descripcion, vinilo, cover, spotifyUrl, premios } = album;
 
     return(
-        
+            // Alterna la clase "open" si el usuario clickea en la imagen o no
             <article className={`album-card ${abierto ? "open" : ""}`} >
 
-
+                {/* Al clickear en la imagen, se invierte el valor del estado "abierto" */}
                 <div className="album-media" onClick={() => setAbierto(!abierto)}>
                     <img className="vinilo" src={ vinilo }/>
                     <img className="cover" src={ cover }/>
@@ -33,7 +34,8 @@ function AlbumCard({ album }){
 
                 <div className="awards">
                     <p>Premios</p>
-                    <ul class="list-awards">
+                    {/* Renderizado de la lista de premios con map */}
+                    <ul className="list-awards">
                         { premios.map((premio, index) => 
                         (<li key={index}>{premio}</li>))}
                     </ul>

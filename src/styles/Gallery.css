@@ -13,6 +13,7 @@
 }
 
 /* Contenedor principal con flechas y carrusel */
+
 .fotos-container {
     display: flex;
     align-items: center;
@@ -24,6 +25,7 @@
 }
 
 /* Botones de navegación */
+
 .fotos-container button {
     background: transparent;
     border: 2px solid currentColor;
@@ -46,7 +48,7 @@
     opacity: 0.8;
 }
 
-/* Escenario 3D */
+/* Aplico perspectiva */
 .escenario-fotos {
     position: relative;
     width: 550px;
@@ -56,6 +58,7 @@
 }
 
 /* Tarjeta individual transparente */
+
 .photo {
     position: absolute;
     top: 0;
@@ -70,6 +73,7 @@
 }
 
 /* Imagen con bordes redondeados y sombra propia */
+
 .photo img {
     max-width: 100%;
     max-height: 100%;
@@ -81,7 +85,7 @@
     display: block;
 }
 
-/* Estados 3D según la clase calculada */
+/* Posicion segun la clase  */
 .photo.activa {
     transform: translateX(0) translateZ(0) rotateY(0deg);
     opacity: 1;

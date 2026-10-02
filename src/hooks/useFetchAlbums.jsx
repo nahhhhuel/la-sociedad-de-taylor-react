@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { URL_ALBUMS } from "../utils/api";
 
+// Hook para englobar la peticion de los albums a la API
 function useFetchAlbums() {
 
     const [albums, setAlbums] = useState([]);
@@ -9,7 +10,6 @@ function useFetchAlbums() {
     const [error, setError] = useState(null);
 
     const fetchAlbums = async () => {
-
         setLoading(true);
         setError(null);
 
@@ -21,7 +21,6 @@ function useFetchAlbums() {
             }
 
             const albumsParseados = await respuesta.json();
-
             setAlbums(albumsParseados);
         } catch (error) {
             setError(error.message || "No se pudó obtener los albums desde la API")
@@ -30,6 +29,7 @@ function useFetchAlbums() {
         }
     }
 
+// Hook para hacer la carga de datos la primera vez que se renderiza el componente
 useEffect(() => {
     const cargaInicial = async () => {
         try {
@@ -40,7 +40,6 @@ useEffect(() => {
             }
 
             const albumsParseados = await respuesta.json();
-            
             setAlbums(albumsParseados);
         } catch (error) {
             setError(error.message || "No se pudó obtener los albums desde la API")
