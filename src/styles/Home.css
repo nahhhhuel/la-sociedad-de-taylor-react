@@ -1,0 +1,36 @@
+.logo-img-menu {
+    max-width: 100%;
+    height: auto;
+}
+
+.logo-img {
+    max-width: 150px;
+    min-width: 0;
+    width: 100%;
+    height: auto;
+    flex-shrink: 1;
+    cursor: pointer;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .video-desktop{
+    max-width: 100%;
+    width: 100%;
+    }
+
+    .video-mobile{
+    visibility: hidden;
+    display: none;
+    }
+}
+
+@media (max-width: 767px) {
+.video-mobile {
+max-width: 100%;
+}
+
+.video-desktop {
+    display: none;
+}
+}

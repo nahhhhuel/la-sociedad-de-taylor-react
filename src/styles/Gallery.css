@@ -1,0 +1,129 @@
+.gallery-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.gallery-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 2rem;
+}
+
+/* Contenedor principal con flechas y carrusel */
+.fotos-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    margin: 2rem auto;
+    user-select: none;
+}
+
+/* Botones de navegación */
+.fotos-container button {
+    background: transparent;
+    border: 2px solid currentColor;
+    color: inherit;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    z-index: 10;
+}
+
+.fotos-container button:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Escenario 3D */
+.escenario-fotos {
+    position: relative;
+    width: 550px;
+    height: 520px;
+    max-width: 75vw;
+    perspective: 1000px;
+}
+
+/* Tarjeta individual transparente */
+.photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+/* Imagen con bordes redondeados y sombra propia */
+.photo img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 14px;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.6));
+    display: block;
+}
+
+/* Estados 3D según la clase calculada */
+.photo.activa {
+    transform: translateX(0) translateZ(0) rotateY(0deg);
+    opacity: 1;
+    z-index: 3;
+}
+
+.photo.izquierda {
+    transform: translateX(-45%) translateZ(-160px) rotateY(25deg);
+    opacity: 0.55;
+    z-index: 2;
+}
+
+.photo.derecha {
+    transform: translateX(45%) translateZ(-160px) rotateY(-25deg);
+    opacity: 0.55;
+    z-index: 2;
+}
+
+.photo.oculta {
+    transform: translateX(0) translateZ(-320px);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Responsive para celulares */
+@media (max-width: 768px) {
+    .fotos-container {
+        gap: 0.6rem;
+    }
+
+    .escenario-fotos {
+        width: 100%;
+        max-width: 320px;
+        height: 380px;
+    }
+
+    .photo.izquierda {
+        transform: translateX(-35%) translateZ(-110px) rotateY(20deg);
+    }
+
+    .photo.derecha {
+        transform: translateX(35%) translateZ(-110px) rotateY(-20deg);
+    }
+}
